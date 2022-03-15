@@ -1,0 +1,148 @@
+{% extends 'store/base.html' %}
+
+
+
+{% block article %}
+
+<main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
+
+      <!--Grid row-->
+    	
+    		
+    	<div class="container-fluid">
+    		
+    	
+			<div class="container-fluid">
+		    	<div class="row wow fadeIn">
+		    		<div class="container-fluid text-center">
+		    			<h2 class="page-header text-info"><strong>Passer votre commande</strong></h2>
+		    			     
+		    			
+		    		</div>
+
+		        <!--Grid column-->
+		    		<div class="span5 thumbnail">
+
+		    			<img src="{{ product.picture.url }}" class="img-responsive" alt="">
+
+		    		</div>
+		        <!--Grid column-->
+
+		        <!--Grid column-->
+		    	<div class="col-md-6 mb-4">
+
+		          <!--Content-->
+		    		<div class="p-4">
+
+		        		<div class="mb-3">
+			            	<strong>Categorie: 
+			            		<span class="badge badge-warning">{{ product.categorie }}</span>
+					          
+			             	</strong>
+			          
+			            </div>
+			            
+
+			            <p class="lead">
+			              
+			              <strong><span class=" text-info">${{ product.categorie.price }}</span>
+			              </strong>
+			            </p>
+
+			            <p><span class="text-info">Quantité par Pack: {{ product.categorie.pack_quantity }}</span><br>
+			            	<span class="text-info">Quantité par Piece: {{ product.categorie.piece_quantity }}</span></p>
+
+		            	<button class="btn btn-info btn-lg" disabled="disabled">Description:  </button>
+		            	<div class="container-fluid">
+		            		<p class="lead text-justify">{{ product.discription }}</p>
+		            	
+		            	</div>
+
+		            	<form class="form-inline" action="{% url 'store:detail' id_prod=product.id %}" method="post">
+		            		{% csrf_token %}
+		            		<div class="form-group {% if form.name.errors %}has-warning has-feedback{% endif %}">
+		            			<label for="{{ form.name.id_for_label }}" class="control-label">Nom</label>
+		            			{{ form.name }}
+		            		</div>
+		            		<div class="form-group {% if form.email.errors %}has-warning has-feedback{% endif %}">
+		            			<label for="{{ form.email.id_for_email" class="control-label">E-mail</label>
+		            			{{ form.email }}
+		            		</div>
+		            		<button type="submit" class="btn btn-success icon-white icon-ok-sign">Reserver</button>
+		            		<!-- <input type="hidden" name="" value="{{ id_prod }}" class="hidden"> -->
+		            		
+		            	</form>
+
+		            	{% if errors %}
+		            		<div>
+		            			{% for key, error in errors %}
+		            			{% autoescape off %}
+		            				{{ error }}
+		            			{% endautoescape %}
+		            			{% endfor %}
+		            		</div>
+		            	{% endif %}
+		            	
+
+			            
+		          	</div>
+		          <!--Content-->
+
+		        </div>
+		        <!--Grid column-->
+
+		      </div>
+		      <!--Grid row-->
+			
+
+		      <hr>
+
+		      <!--Grid row-->
+		      <div class="row d-flex justify-content-center wow fadeIn">
+
+		        <!--Grid column-->
+		        <div class="container-fluid text-center">
+
+		          <h3 class="page-header text-info"><strong>Voir aussi</strong></h3>
+
+		          <p class="lead">Voici autres articles ayant la catégorie <strong><a href="#">{{ product.categorie }}</a></strong>  </p>
+
+		        </div>
+		        <!--Grid column-->
+
+		      </div>
+		      <!--Grid row-->
+
+		      <!--Grid row-->
+		      <div class="row">
+		      	{% for prod in also %}
+		      	<div class="span3 thumbnail">
+		      		<a href="{% url 'store:detail' id_prod=prod.id %}">
+			          	<img src="{{ prod.picture.url }}" class="img-responsive" alt="">
+			        </a>
+			        <div class="text-center">
+			        	<h5 class="text-info"> <strong> {{ product.categorie }} </strong></h5>
+						<h5 class="text-info"> <strong>{{ product.caracterisk }}</strong></h5>
+
+			        	
+			        </div>
+			        
+
+		      		
+		      	</div>
+		      	{% endfor %}
+		      </div>
+		      
+		      <!--Grid row-->
+			</div>
+		</div>
+		<p><span class=""> </span> </p>
+
+
+    </div>
+  </main>
+
+
+
+{% endblock %}
