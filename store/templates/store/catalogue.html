@@ -1,0 +1,60 @@
+{% extends 'store/base.html' %}
+
+
+
+{% block article %}
+
+<div class="container-fluid">
+
+	<h2 class="page-header text-primary text-center"><strong>Nos prix</strong></h2>
+
+	
+	<div class="container-fluid">
+		<p class="lead ">
+		<strong class="text-danger">KSK SARL</strong> Vous propose un tarif ayant des prix defiant toutes concurances sur le marché. Par pack ou par piece, nous vous offrons le meilleure tarif sur notre produit <strong class="text-danger">KITUNGA.</strong> Selon la reference, nos prix varient aussi selon <strong class="text-primary">format</strong> mais aussi de la quantité commandé qui est soit par <strong class="text-primary">Pack</strong> ou encore la possiblité de commandé par <strong class="text-primary">Piece</strong>. tout cela a un prix très abordable.
+		</p>
+
+
+	<div class="container-fluid">
+
+		<table class="table table-striped table-bordered table-hover table-condensed">
+
+			<caption>EXTRAIT DU DEVIS DES SACS EN PAPIER AVEC MANCHES <a href="#">Cliquez</a> pour le télécharger le devis complet.</caption>
+			<tr class="danger">
+				<th>REFERENCE PRODUIT</th>
+				<th>DESCRIPTION (Dimension en Cm)</th>
+				<th>QUANTITE(PACK)</th>
+				<th>QUANTITE(PIECE)</th>
+				<th>PRIX DE VENTE/ PACK EN USD</th>
+			</tr>
+			{% for content in catprice%}
+			<tr>
+				<td>{{ content.reference }}</td>
+				<td>{{ content.taille }}</td>
+				<td class="text-center">{{ content.pack_quantity }}</td>
+				<td class="text-center">{{ content.piece_quantity }}</td>
+				<td class="text-center">{{ content.price }} $</td>
+			</tr>
+			{% endfor %}
+			
+		</table>
+		
+	</div>
+		
+
+		<p class="lead">Telecharger notre fiche de prix pour voir en detail nos tarif</p>
+
+		<p class="text-center"> <button class="btn btn-success btn-lg " disabled="disabled">Télécharger le fichier</button> </p>
+
+
+	</div>
+
+	
+</div>
+					
+
+
+
+
+
+{% endblock %}
