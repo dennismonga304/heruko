@@ -1,0 +1,149 @@
+{% extends 'store/base.html' %}
+
+
+{% load static %}
+
+
+
+{% block header %}
+
+<div class="jumbotron text-center">
+	<div class="span2">
+		<img src="{% static 'store/img/KSK sarl logo[1].png' %}" class="img-responsive">
+			
+	</div class="span2">
+
+		<h1 class="text-center lead ">Bienvenu sur le site KsK sarl</h1>
+		<p class=" lead text-capitalize text-success">Le client est plusque roi chez nous</p>
+</div>
+
+
+{% endblock %}
+
+
+{% block article %}
+
+<div class="container">
+	<div class="container-fluid">
+
+		<div class="row">
+			<!-- who a mi -->
+
+			<div class="container-fluid">
+				<h1 class="page-header text-center text-danger">Qui somme <small>nous</small>?</h1>
+				<div class="col-sm-4 ">
+					<img class="img-responsive img-rounded thumbnail" width="90%" height="90%" src="{% static 'store/img/Final Kitunga Logo[1].png' %}">
+				</div>
+
+				<p class="lead text-justify"><strong class="page-header text-danger">K.S.K</strong> est une entreprise spécialisée dans
+					la production et la commercialisation des emballages en papier biodégradable que nous appelons
+					<strong class="page-header text-danger">KITUNGA</strong>. Nous apportons notre solution réelle en matière d’emballages aux entreprises
+					et aux particuliers.</p>
+				
+			</div>
+
+			<div class="container-fluid text-center">
+				<h3> <strong><a href="{% url 'store:listing' %}"> </a></strong></h3>
+				<h3> <strong><a href="{% url 'store:listing' %}">NOS PRODUITS</a></strong></h3>
+
+				<p>(description des produits et caractéristiques)</p>
+			</div>
+			
+			<div class="container-fluid thumbnail">
+				<div class="col-sm-2 text-center">
+					<a href="{% url 'store:listing' %}">
+						<img class="img-responsive " width="900%" height="900%" src="{% static 'store/img/produit.jpg' %}">
+
+					</a>
+
+					
+				</div>
+				<ul class="list-unstyled text-center text-justify">
+
+					<li><h4><strong><a href="{% url 'store:listing' %}">Notre produit:</a></strong></h4> <p class="lead"> <strong class="text-danger">KITUNGA</strong>,
+						sac papier kraft brun à poignées plates est pratique avec sa dimension standard de 25 x 15 x 35 cm. Sa grande ouverture permet le
+						transport des produits alimentaires mais aussi des produits de boutique pour un maximum de polyvalence. Le sac KITUNGA en papier
+						kraft brun est disponible dans plusieurs tailles pour emballer petits et grands objets. Les soufflets latéraux de KITUNGA kraft brun
+						facilitent le rangement des produits à l’intérieur du sac. Pour plus de stabilité des produits alimentaires, il est possible d’installer au
+						fond du sac en papier kraft brun un calage en carton qui permettra aux professionnels de la vente à emporter d’effectuer des livraisons à domicile
+						chez leurs clients. Ce sac papier kraft brun à poignées plates est également très solide avec son fond renforcé. Les poignées plates sont larges et
+						épaisses pour éviter qu’elles ne rompent. Vous pouvez ainsi transporter sans crainte de rupture vos produits alimentaires même si ceux-ci sont
+						lourds.</p></li>
+				</ul>
+
+				
+
+				<p >Design sobre et esthétique qui plait au plus grand nombre. Polyvalent avec ses nombreuses tailles disponibles</p> 
+
+				<p class="lead">Nous produisons les tailles suivantes en cm :</p>
+
+				<ul>
+					<li>Petit : 21,5x12x30</li>
+					<li>Moyenne : 23x13x46</li>
+					<li>Grande : 25x15x35</li>
+				</ul>
+				<p class="lead">Autres dimensions: </p>
+				<ul>
+					<li>16x09,5 x24</li>
+					<li>30x13x 42</li>
+				</ul>
+
+				<blockquote class="blockquote">
+					<p class="text-capitalize">Chez <strong class="text-danger">KSK</strong> le client est plusque roi !</p>
+
+					<footer>Quote by <cite title="Dennis monga">KSK SARL</cite></footer>
+				</blockquote>
+			
+			</div>
+
+
+						 
+				
+
+
+
+			<!-- end who -->
+			<!-- resean -->
+			<div class="container-fluid" id="miniCanvas"> 
+				<div class="page-header">
+					<h3 class="text-center text-danger"> <strong>POURQUOI NOUS </strong><small>CHOISIR</small>?</h3>
+				</div>
+				<p class="lead text-justify"><strong class="text-danger">KITUNGA</strong> vous offre la liberté de vous promener avec toute aise grâce au confort qu’offre son sac et grâce aux atouts suivants :</p>
+				<div class="row-fluid">
+					<div class="span12 text-justify">
+						<ul>
+							<li class="lead"><strong class="text-success">MANIABILITÉ:</strong> nos sacs sont entièrement maniables et conçus pour vous permettre de les porter de manière confortable</li>
+
+							<li class="lead"><strong class="text-success">CAPACITÉ DE CHARGE:</strong> nos sacs sont conçus de manière à vous permettre de porter tout objet dont le poids varie entre 1 et 7 kilo. D’où nous avons plusieurs types de tailles.</li>
+
+							<li class="lead"><strong class="text-success">DURABILITÉ:</strong> nous vous offrons des sacs utilisables plusieurs fois, sauf lorsqu’il a été préalablement utilisé pour porter une matière humide.</li>
+
+							<li class="lead"><strong class="text-success">LE DESIGN ET LA BEAUTÉ:</strong>  nous vous offrons des sacs qui vous mettent en valeur grâce à leur couleur, à leur design et à leur légèreté</li>
+
+							
+					
+							<li class="lead"><strong class="text-success"><a href="{% url 'store:catalogue' %}">LE PRIX:</a></strong> nous vous offrons un prix qui défie toute concurrence</li>
+
+							<li class="lead"><strong class="text-success">PRÊT AU RECYCLAGE:</strong> après usages, nos produits sont prêts à être recyclés, ce qui nous permet de garder notre ville propre</li>
+
+							<li class="lead"><strong class="text-success">BIODÉGRADABLE:</strong> Loin d’avoir des objectifs purement lucratifs, nous nous battons à notre manière pour sauvegarder sainement notre environnement. afin de lutter contre le réchauffement climatique causé par l’utilisation des produits qui ont du mal à se dégrader spontanément et d’une manière rapide, nos emballages ont la capacité de se dégrader spontanément dans une durée de 4 mois. </li>
+						</ul>
+					</div>
+				</div>
+			</div> 
+
+
+			
+			<!-- en who -->
+		</div>
+	</div>
+
+	<div class="container-fluid row">
+		
+	</div>
+	
+</div>
+
+
+
+{% endblock %}
