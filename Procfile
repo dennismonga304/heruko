@@ -1,0 +1,1 @@
+web: gunicorn ksksite_project.wsgi
