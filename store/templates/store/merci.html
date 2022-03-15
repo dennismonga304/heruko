@@ -1,0 +1,32 @@
+{% extends 'store/base.html' %}
+
+{% block article %}
+<div class="container">
+	<hr>
+	<h1 class="intro-text text-center text-success">Merci !</h1>
+	<hr class="detail-separator">
+
+	<p class="lead">Merci Monsieur/Madame <em>{{ contact }}</em> le produit KITUNGA <em>{{ product }}</em> vient d'être mis en commande pour vous. votre adresse email {{ contact.email }} nous permettra de vous contacté afin de vous livrez la commande passer. Chez KSK SARL le client est plus que roi. </p>
+	<div class="row-fluid text-center">
+		<div class="span12">
+			<div class="span3"> </div>
+			<div class="span6">
+				<img class="img-responsive img-rounded" height="400%" src="{{ product.picture.url }}">
+			</div>
+			<div class="span3"> </div>
+			
+		</div>
+		<div class="span12">
+			<div class="span3"> </div>
+			
+			<div class="span3"> </div>
+			
+		</div>
+		
+	</div>
+	
+	
+</div>
+
+
+{% endblock %}
