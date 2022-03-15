@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Kitunga_sarl</title>
+
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'store/css/bootstrap.min.css' %}">
+		<link href="{% static 'store/css/bootstrap-responsive.min.css' %}" rel="stylesheet" type="text/css">
+
+		<!-- <link rel="stylesheet" type="text/css" href="csss/tuto1.css"> -->
+
+
+		<style media="screen">
+			.navbar{
+				margin-bottom:0;
+				border-radius: 0;
+			}
+
+
+			.container{
+				background-color: white;
+			}
+
+
+			body{
+				background-image: url("{% static 'store/img/Screenshot_20200630-090637_WhatsApp (2).jpg' %}") ;
+				
+			}
+			
+			.jumbotron, #footer{
+				background-color: rgb(239, 228, 176);
+				
+			}
+
+			
+
+
+
+			
+		</style>
+	</head>
+	<body>
+			
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="collapsed navbar-collapse" id="bs-example-navbar-collapse-1">
+					
+					<ul class="nav navbar-nav">
+						<li class="active" id="liAcceuil"><a href="/" class="navbar-brand waves-effect">KSKsarl-company <span class="sr-only">(current)</span></a></li>
+						<li class="active" id="liAcceuil"><a href="/" class="navbar-brand waves-effect">Acceuil <span class="sr-only">(current)</span></a></li>
+						
+						<li ><a href="{% url 'store:listing' %}" class="navbar-brand">Produit</a></li>
+						<li ><a href="{% url 'store:catalogue' %}" class="navbar-brand">Fiche des prix <span class="sr-only"></span></a></li>
+
+					</ul>
+
+					
+				</div>
+				
+			</div>
+			
+		</nav>
+
+		{% block header %}
+
+		{% endblock %}
+
+			
+		
+
+		<div class="container">
+			<section>
+				<nav class="navbar navbar-expand-lg navbar-dark mdb-color lighten-3 mt-3 mb-5">
+
+		        
+				
+
+				<article>
+				{% block article %}
+				
+				{% endblock %}
+					
+					
+				</article>
+				<aside>
+					{% block aside %}
+
+
+
+					{% endblock %}
+					
+				
+				</aside>
+
+			</section>
+
+		</div>
+
+
+		<footer class="page-footer text-center font-small mt-4 wow fadeIn" id="footer">
+
+
+		    <hr class="my-4">
+
+		    <!-- Social icons -->
+		    <div class="pb-4">
+		    	
+		    	<a href="https://www.facebook.com/mdbootstrap" target="_blank">
+		    		<i class="fab fa-facebook-f mr-3"></i>
+		    	</a>
+
+		    	<a href="https://twitter.com/MDBootstrap" target="_blank">
+		    		<i class="fab fa-twitter mr-3"></i>
+		    	</a>
+
+		    	<a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
+		        	<i class="fab fa-youtube mr-3"></i>
+		    	</a>
+
+		    	<a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">
+		    		<i class="fab fa-google-plus-g mr-3"></i>
+		    	</a>
+
+		    	<a href="https://dribbble.com/mdbootstrap" target="_blank">
+		    		<i class="fab fa-dribbble mr-3"></i>
+		    	</a>
+
+		    	<a href="https://pinterest.com/mdbootstrap" target="_blank">
+		    		<i class="fab fa-pinterest mr-3"></i>
+		    	</a>
+
+		    	<a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
+		        	<i class="fab fa-github mr-3"></i>
+		    	</a>
+
+		    	<a href="http://codepen.io/mdbootstrap/" target="_blank">
+		    		<i class="fab fa-codepen mr-3">
+		        	</i>
+		    	</a>
+
+		      
+		    </div>
+		    <!-- Social icons -->
+
+		    <!--Copyright-->
+
+		    <div class="footer-copyright py-3">
+		    	© 2021 Copyright:
+		    	<a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> DennisMonga@gmail.com</a>
+			</div>
+		    <!--/.Copyright-->
+		</footer>
+
+
+		
+
+		<script src="{% static 'store/js/jquery-1.10.2.js' %}"></script>
+		<script src="{% static 'store/js/bootstrap.min.js' %}"></script>
+	</body>
+</html>
+
+
+
+
+
+
