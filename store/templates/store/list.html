@@ -1,0 +1,156 @@
+{% extends 'store/base.html' %}
+
+
+{% load static %}
+
+
+{% block article %}
+<main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
+
+      <!--Grid row-->
+    	
+    		
+    	<div class="container-fluid">
+    		
+    	
+			<div class="container-fluid">
+		    	<div class="row wow fadeIn">
+		    		<div class="container-fluid text-center">
+		    			<h2 class="page-header text-info"><strong>Nos Produits</strong></h2>
+		    			    
+		    			
+		    		</div>
+
+		        <!--Grid column-->
+		    		<div class="col-sm-4">
+
+		    			<img class="img-responsive img-rounded" width="900%" height="900%" src="{% static 'store/img/produit.jpg' %}">
+
+		    		</div>
+		        <!--Grid column-->
+
+		        <!--Grid column-->
+		    	<div class="col-md-6 mb-4">
+
+		          <!--Content-->
+		    		<div class="p-4">
+
+		        		<div class="mb-3">
+			            	<strong class="text-info">Categorie: </strong>
+			            		{% for cat in categorie %}
+					          <a href="\">
+					            <span class="badge badge-pill primary-color">{{ cat }}</span>
+					          </a>
+					        	{% endfor %}
+
+
+			            </div>
+			            
+			            <p><span class=""> </span> </p>
+
+			            <!-- <p class="lead">
+			            	<a href="\">
+					            <span class="badge purple mr-1">Prix</span>
+					          </a>
+
+			            </p> -->
+
+
+		            	
+		            	<div class="container-fluid">
+		            		<button class="btn btn-info " disabled="disabled">Description:  </button>
+		            		<p class="lead text-justify"><strong class="text-danger">KITUNGA</strong>,
+								sac papier kraft brun à poignées plates est pratique avec sa dimension standard de 25 x 15 x 35 cm.
+								Sa grande ouverture permet le transport des produits alimentaires mais aussi des produits
+								de boutique pour un maximum de polyvalence. Le sac <strong class="text-danger">KITUNGA</strong> en papier kraft brun
+								est disponible dans plusieurs tailles pour emballer petits et grands objets. Les soufflets latéraux de
+								<strong class="text-danger">KITUNGA</strong> kraft brun facilitent le rangement des produits à l’intérieur du sac.
+								Pour plus de stabilité des produits alimentaires, il est possible d’installer au fond du sac en papier kraft brun
+								un calage en carton qui permettra aux professionnels de la vente à emporter d’effectuer des livraisons à domicile
+								chez leurs clients. </p>
+		            	
+		            	</div>
+		            
+
+			            
+		          	</div>
+		          <!--Content-->
+
+		        </div>
+		        <!--Grid column-->
+
+		      </div>
+		      <!--Grid row-->
+			
+
+		      <hr>
+
+		      <!--Grid row-->
+		      <div class="row d-flex justify-content-center wow fadeIn">
+
+		        <!--Grid column-->
+		        <div class="container-fluid text-center">
+
+		          <h3 class="page-header text-info"> <strong>Autres informations importantes </strong></h3>
+
+		          <p class="lead text-justify">Ce sac papier kraft brun à poignées plates est également très solide avec son fond renforcé. Les poignées plates sont larges et épaisses pour éviter qu’elles ne rompent. Vous pouvez ainsi transporter sans crainte de rupture vos produits alimentaires même si ceux-ci sont lourds.</p>
+
+		        </div>
+		        <!--Grid column-->
+
+		      </div>
+		      <!--Grid row-->
+
+		      <!--Grid row-->
+		      <div class="row wow fadeIn">
+
+		        <!--Grid column-->
+		        <div class="span12">
+			        {% for prod in product %}
+			        <div class="span3 offest1 thumbnail">
+
+			    		<a href="{% url 'store:detail' id_prod=prod.id %}"><img src="{{ prod.picture.url }}" class="img-responsive img-rounded" alt=""></a>
+
+			    		<div class="container-fluid  text-center">
+			    			
+			    			<h4 class="text-info">
+			    				<a href="{% url 'store:detail' id_prod=prod.id %}">
+			    					<strong>{{ prod.categorie }}</strong>
+			    				</a>
+			    			</h4>
+			    			
+			    			
+			    			
+			    		</div>
+
+			        	
+
+			        </div>
+			        {% endfor %}
+
+			        
+			     			       
+			       
+		        </div>
+
+			        
+		        <!--Grid column-->
+
+		        
+		      </div>
+
+		      <!--Grid row-->
+			</div>
+
+		</div>
+		
+		<p><span class=""> </span> </p>
+
+
+    </div>
+  </main>
+
+
+
+{% endblock %}
